@@ -36,10 +36,14 @@
         program = "${pkgs.customNeovim}/bin/nvim";
       };
 
-      devShells.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.mkShell {
+      devShells.x86_64-linux.default = pkgs.mkShell {
+          name = "neovim shell";
           buildInputs = [
             pkgs.customNeovim
           ];
+          shellHook = ''
+          echo "Welcome"
+        '';
       };
     };
 }
