@@ -30,9 +30,16 @@
 
     in {
       packages.x86_64-linux.default = pkgs.customNeovim;
+
       apps.x86_64-linux.default = {
         type = "app";
         program = "${pkgs.customNeovim}/bin/nvim";
+      };
+
+      devShells.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.mkShell {
+          buildInputs = [
+            pkgs.customNeovim
+          ];
       };
     };
 }
