@@ -13,6 +13,8 @@ vim.o.cursorline=true
 vim.o.scrolloff=20
 vim.o.filetype = "on"
 vim.opt.ignorecase = true
+vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- Define your colors
 local colors = {
